@@ -4,6 +4,18 @@ plugins {
 }
 
 android {
+
+    signingConfigs {
+        create("release") {
+            if (project.hasProperty("MYAPP_RELEASE_STORE_FILE")) {
+                storeFile = file(project.findProperty("MYAPP_RELEASE_STORE_FILE"))
+                storePassword = project.findProperty("MYAPP_RELEASE_STORE_PASSWORD") as String
+                keyAlias = project.findProperty("MYAPP_RELEASE_KEY_ALIAS") as String
+                keyPassword = project.findProperty("MYAPP_RELEASE_KEY_PASSWORD") as String
+            }
+        }
+    }
+
     namespace = "tv.rasucc.ov.time"
     compileSdk = 33
 
@@ -24,6 +36,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {

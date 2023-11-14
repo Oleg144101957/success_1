@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Success Of Ra</string>
+    <string name="loading">loading…</string>
+    <string name="hello">Hello!!!</string>
+    <string name="good">Good!</string>
+    <string name="your_best_points_is_0">Your best points is: 0</string>
+    <string name="your_points_is_0">Your points is 0</string>
+    <string name="the_game_is_finished_your_health_is_low">The game is finished, your health is low(</string>
+    <string name="no_connection">No Connection</string>
 </resources>
